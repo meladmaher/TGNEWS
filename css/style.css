@@ -1,3 +1,4 @@
+
 * {
   padding: 0;
   margin: 0;
@@ -81,9 +82,10 @@ nav .container {
 
 nav .container .icon {
   width: 112px;
-  display: flex;
-  justify-content: space-around;
-  font-size: 21px;
+      display: flex;
+      justify-content: space-around;
+      font-size: 21px;
+      align-items: center;
 }
 
 i {
@@ -240,77 +242,6 @@ nav .container .logo img {
   margin-top: 100px;
 }
 
-/* --start MovingNews -- */
-.BodyContant .container .MovingNews {
-  overflow-x: clip;
-}
-
-/* ---------- */
-.card-wrapper {
-
-  display: flex;
-
-}
-
-/* -------- */
-.BodyContant .MovingNews .NewsCard {
-  /* width: 201px; */
-  background-color: var(--colorCard);
-  height: 98%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  overflow: hidden;
-  padding: 5px;
-  margin: 0 4px;
-  box-shadow: var(--Shadow);
-  transition: 0.5s;
-}
-
-.BodyContant .MovingNews .NewsCard span {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #05040457;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #ff9800;
-  font-size: 18px;
-  transition: 0.1s;
-  font-weight: bold;
-  visibility: hidden;
-}
-
-.BodyContant .MovingNews .NewsCard:hover span {
-  visibility: visible;
-}
-
-.BodyContant .MovingNews .NewsCard:hover {
-  transform: scale(1.2);
-
-}
-
-.MovingNews .NewsCard img {
-  width: 100%;
-}
-
-.MovingNews .NewsCard h5 {
-  font-size: 15px;
-  color: #5e5c5c;
-
-}
-
-.MovingNews .NewsCard p {
-  text-align: center;
-  font-size: 13px;
-  color: black;
-}
-
-/* --End MovingNews -- */
 /* -- ----------------------------------------start BasicNews -------------------------------------------------- */
 .BasicNews {
   flex: 2;
@@ -415,74 +346,6 @@ nav .container .logo img {
 }
 
 /* -----------End SubNews  */
-.EconomicNews {
-  width: 100%;
-  height: 357px;
-  background: #2196f3;
-  position: relative;
-  overflow: hidden;
-}
-
-.EconomicNews h1 {
-  position: absolute;
-  right: 30px;
-  font-size: 29px;
-  color: white;
-}
-
-.EconomicNews i {
-  position: absolute;
-  right: 11px;
-  top: 19px;
-  font-size: 37px;
-  transform: rotate(43deg);
-  color: white;
-}
-
-.EconomicNews .cardEconomic .NewsCard {
-  width: 272px;
-  position: relative;
-  border: solid white 5px;
-}
-
-.EconomicNews .cardEconomic .NewsCard img {
-  width: 100%;
-}
-
-.cardEconomic .NewsCard h5 {
-  position: absolute;
-  bottom: 38px;
-  right: 20px;
-  font-size: 21px;
-}
-
-.EconomicNews .cardEconomic .NewsCard .logo {
-  width: 75px;
-  position: absolute;
-  top: 79%;
-  right: 30px;
-}
-
-.cardEconomic h2 {
-  width: 100%;
-  font-size: 17px;
-  text-align: center;
-  margin: 15px 0;
-}
-
-.cardEconomic {
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-
-}
-
-.cardEconomic a {
-  margin: 0 32px;
-}
-
 /* -----Start News Egypt --------  */
 .NewsEgypt .container {
   display: flex;
@@ -537,7 +400,6 @@ nav .container .logo img {
   align-items: center;
   background: white;
   width: 336px;
-  /* height: 260px; */
   margin-bottom: 40px;
   padding: 20px;
 }
@@ -568,41 +430,30 @@ nav .container .logo img {
   margin-bottom: 40px;
 }
 
-.centerCard {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.NewsImg .gallery-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
   width: 100%;
+  padding: 20px;
 }
 
-.NewsImg .container .imgNews {
-  width: 610px;
-  height: 345px;
-  display: flex;
-  flex-wrap: wrap;
-  overflow: hidden;
-  justify-content: center;
-}
-
-.NewsImg .container .cardImg {
-  width: 614px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-.NewsImg .container .cardImg img {
-  width: 100%;
-}
-
-.imgNews .Slider {
-  background: aquamarine;
-  width: 610px;
-  height: 345px;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+.NewsImg .gallery-item {
   position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: var(--Shadow);
+}
+
+.NewsImg .gallery-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.NewsImg .gallery-item:hover img {
+  transform: scale(1.05);
 }
 
 /* -- -------------End Sec News Img  ---------------- */
@@ -705,7 +556,6 @@ button {
 /* ---------Start footer --------- */
 footer {
   width: 100%;
-  /* height: 485px; */
   background-color: black;
   padding: 30px;
 }
@@ -792,7 +642,6 @@ button {
 
 footer .Programmers {
   width: 390px;
-  /* height: 270px; */
   color: white;
   display: flex;
 flex-direction: column;
@@ -849,63 +698,3 @@ footer .Programmers h1 {
 }
 
 /* ---------End footer --------- */
-/* ------start scroll------ */
-::-webkit-scrollbar {
-  width: 13px;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: var(--NavColor);
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background-color: #747474;
-}
-
-/* -------Start Anmtion ----- */
-.card-wrapper a {
-  margin: 0 86px;
-}
-
-.cardEconomic a {
-  margin: 0 149px;
-}
-
-.card-wrapper {
-  white-space: nowrap;
-  animation: 15s SlidNews infinite linear;
-}
-
-.cardEconomic {
-  white-space: nowrap;
-  animation: 15s SlidNews infinite linear;
-}
-
-.NewsImg .container .cardImg {
-  white-space: nowrap;
-  animation: 5s SlidNewsImg infinite linear;
-}
-
-@keyframes SlidNews {
-  from {
-    transform: translateX(200%);
-  }
-
-  to {
-    transform: translateX(-250%);
-  }
-}
-
-@keyframes SlidNewsImg {
-  from {
-    transform: translateX(0%);
-  }
-
-  to {
-    transform: translateX(-100%);
-  }
-}
-
-:hover {
-  animation-play-state: paused;
-}
